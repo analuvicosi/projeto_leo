@@ -4,8 +4,9 @@ import AboutUs from '@/views/AboutUs.vue';
 import LoginPage from '@/views/LoginPage.vue';
 import ContactUs from '@/views/ContactUs.vue';
 import ProductsPage from '@/views/ProductsPage.vue';
-import CartPage from '@/views/CartPage.vue'; // Nova rota para o carrinho
-import SuccessPage from '@/views/SuccessPage.vue'; // Nova rota para a página de sucesso
+import ProductDetail from '@/views/ProductDetail.vue';
+import CartPage from '@/views/CartPage.vue'; 
+import SuccessPage from '@/views/SuccessPage.vue'; 
 
 const routes = [
   { path: '/', component: HomePage },
@@ -13,8 +14,9 @@ const routes = [
   { path: '/login', component: LoginPage },
   { path: '/contact', component: ContactUs },
   { path: '/products', component: ProductsPage },
+  { path: '/productDetail/:id', component: ProductDetail, props: true },
   { path: '/cart', component: CartPage },
-  { path: '/successPage', component: SuccessPage }
+  { path: '/successPage', component: SuccessPage },
 ];
 
 const router = createRouter({
