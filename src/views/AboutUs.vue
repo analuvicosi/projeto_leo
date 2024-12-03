@@ -1,15 +1,31 @@
 <template>
   <div class="about-us-page">
-    <h2 class="page-title">Sobre Nós</h2>
-    <p class="description">Conheça nossa equipe apaixonada por criar delícias!</p>
-    <div class="team-members">
-      <div class="member" v-for="(member, index) in team" :key="index">
-        <img :src="member.image" alt="Foto do membro" class="member-image" />
-        <h3 class="member-name">{{ member.name }}</h3>
-        <p class="member-info">Idade: {{ member.age }}</p>
-        <p class="member-info">Hobby: {{ member.hobby }}</p>
+    <div class="header">
+      <h2 class="page-title">Sobre Nós</h2>
+      <p class="description">Somos uma equipe apaixonada por tecnologia e inovação, com o objetivo de transformar a experiência de compra online.</p>
+    </div>
+
+    <!-- Seção de objetivo -->
+    <div class="goal-section">
+      <div class="goal-content">
+        <h3 class="goal-title">Nosso Objetivo</h3>
+        <p class="goal-text">Nosso principal objetivo com este e-commerce é oferecer uma experiência de compra intuitiva e acessível a todos os usuários. Queremos proporcionar aos nossos clientes uma plataforma moderna, rápida e confiável para realizar suas compras online.</p>
       </div>
     </div>
+
+    <!-- Seção de Desenvolvedores -->
+    <div class="developers-section">
+      <h3 class="developers-title">Conheça a Equipe</h3>
+      <div class="developer-cards">
+        <div class="developer-card" v-for="(member, index) in team" :key="index">
+          <div class="developer-info">
+            <h4 class="developer-name">{{ member.name }}</h4>
+            <p class="developer-role">{{ member.role }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -18,11 +34,11 @@ export default {
   data() {
     return {
       team: [
-        { name: 'Maria', age: 25, hobby: 'Cozinhar', image: 'https://via.placeholder.com/150/FF6347/ffffff?text=Maria' },
-        { name: 'João', age: 30, hobby: 'Fotografia', image: 'https://via.placeholder.com/150/F4A300/ffffff?text=João' },
-        { name: 'Ana', age: 28, hobby: 'Desenhar', image: 'https://via.placeholder.com/150/98C8E7/ffffff?text=Ana' },
-        { name: 'Carlos', age: 35, hobby: 'Jogar futebol', image: 'https://via.placeholder.com/150/98C8E7/ffffff?text=Carlos' },
-        { name: 'Lucia', age: 27, hobby: 'Viajar', image: 'https://via.placeholder.com/150/FF6347/ffffff?text=Lucia' },
+        { name: 'Ana Luiza', role: 'Desenvolvedora Frontend' },
+        { name: 'Edson Mainarte', role: 'Desenvolvedor Backend' },
+        { name: 'Giovana', role: 'Designer de Interface' },
+        { name: 'Leonardo', role: 'Desenvolvedor Fullstack' },
+        { name: 'Vitor Duvilierz', role: 'Especialista em Banco de Dados' },
       ]
     };
   }
@@ -33,62 +49,104 @@ export default {
 .about-us-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  width: 100%;
   padding: 4rem 2rem;
-  margin-top: 80px;
+  background-color: #f8f9fa;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .page-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
+  font-size: 3rem;
   font-weight: bold;
-}
-
-.description {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-.team-members {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-}
-
-.member-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
+  color: #333;
   margin-bottom: 1rem;
 }
 
-.member-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+.description {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.member-info {
-  font-size: 1rem;
+.goal-section {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1100px;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.goal-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.goal-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.developers-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.developers-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.developer-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.developer-card {
+  background-color: #fff;
+  padding: 2rem;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.developer-card:hover {
+  transform: translateY(-10px);
+}
+
+.developer-info {
+  text-align: center;
+}
+
+.developer-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.developer-role {
+  font-size: 1.1rem;
   color: #666;
 }
 </style>

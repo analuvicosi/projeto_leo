@@ -37,11 +37,21 @@ export default {
   },
   methods: {
     handleLogin() {
-      // Aqui você pode fazer uma validação com back-end real ou simular
-      if (this.email === "user@exemplo.com" && this.password === "senha123") {
+      // Carregar os usuários cadastrados do LocalStorage
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Verificar se as credenciais fornecidas existem no array de usuários
+      const user = users.find(
+        (u) => u.email === this.email && u.password === this.password
+      );
+
+      if (user) {
+        // Salvar o usuário logado no LocalStorage
         localStorage.setItem("user", JSON.stringify({ email: this.email }));
-        this.$router.push("/"); // Redireciona para a página inicial
+        // Redirecionar para a página inicial
+        this.$router.push("/"); 
       } else {
+        // Exibir mensagem de erro
         alert("Credenciais inválidas!");
       }
     },

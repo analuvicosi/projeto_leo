@@ -9,6 +9,7 @@
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/products">Produtos</router-link></li>
         <li><router-link to="/login">Login</router-link></li>
+        <li><router-link to="/cadastro">Cadastro</router-link></li>
         <li><router-link to="/contact">Contato</router-link></li>
         <li><router-link to="/about">Sobre Nós</router-link></li>
         <div class="cart-icon">
