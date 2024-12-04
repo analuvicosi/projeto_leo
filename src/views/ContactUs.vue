@@ -41,21 +41,26 @@
   <style scoped>
   .contact-page {
     padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
   }
   
-  .title {
+  /* .title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #333;
+  } */
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
   
   .contact-form {
-    width: 100%;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
     background-color: #fff;
     padding: 2rem;
     border-radius: 10px;
@@ -63,8 +68,16 @@
   }
   
   .form-group {
-    margin-bottom: 1.5rem;
     text-align: left;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   
   .form-group label {
@@ -88,10 +101,9 @@
   }
   
   .submit-btn {
-    background-color: #FF6347;
+    background-color: #ff6347;
     color: white;
     padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;

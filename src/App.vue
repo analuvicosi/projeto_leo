@@ -3,7 +3,7 @@
     <!-- Navbar fixo no topo -->
     <header class="navbar">
       <div class="logo">
-        <a href="/">Loja Deliciosa</a>
+        <a href="/">Docie</a>
       </div>
       <ul class="menu">
         <li><router-link to="/">Home</router-link></li>
@@ -18,30 +18,23 @@
         </div>
       </ul>
       <div class="cart-icon">
-      <router-link to="/cart">
-        <i class="fas fa-shopping-cart"></i>
-      </router-link>
-    </div>
+        <router-link to="/cart">
+          <i class="fas fa-shopping-cart"></i>
+        </router-link>
+      </div>
     </header>
 
-    <!-- Conteúdo das páginas, com margin-top para não cobrir pelo navbar -->
+    <!-- Conteúdo das páginas -->
     <main class="content">
       <router-view></router-view> <!-- Aqui as páginas serão renderizadas -->
     </main>
 
     <!-- Footer fixo na parte inferior -->
     <footer class="footer">
-      <p>&copy; 2024 Loja Deliciosa. Todos os direitos reservados.</p>
+      <p>&copy; 2024 Docie. Todos os direitos reservados.</p>
     </footer>
   </div>
 </template>
-
-<!-- <script>
-export default {
-  name: 'App',
-};
-</script>
- -->
 
 <script>
 export default {
@@ -55,6 +48,9 @@ export default {
 </script>
 
 <style scoped>
+/* Importando fontes modernas do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
 /* Navbar fixo no topo */
 .navbar {
   position: fixed;
@@ -66,17 +62,19 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 2rem;
+  padding: 12px 2rem;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: 60px; /* Altura da navbar reduzida */
+  height: 70px; /* Aumentando a altura para melhorar a legibilidade */
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar .logo a {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 600;
   text-decoration: none;
   color: white;
+  font-family: 'Playfair Display', serif; /* Usando fonte mais elegante para o logo */
 }
 
 .navbar .menu {
@@ -86,13 +84,14 @@ export default {
 }
 
 .navbar .menu li {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .navbar .menu li a {
   text-decoration: none;
   color: white;
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
@@ -104,42 +103,46 @@ export default {
 /* Estilo geral para conteúdo das páginas */
 .content {
   padding: 2rem;
-  margin-top: 80px; /* Ajuste para que o conteúdo não fique abaixo do navbar */
+  padding-top: 80px; /* Ajuste para que o conteúdo não fique abaixo do navbar */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 80vh; /* Garantir que o conteúdo ocupe boa parte da altura da tela */
+  min-height: calc(100vh - 70px); /* Ajustando para o novo tamanho da navbar */
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Ajuste para páginas específicas (Produtos, Contato, etc.) */
 .products-page,
 .contact-page,
 .about-page {
-  margin-top: 100px; /* Ajuste de margin-top para dar um espaço adequado do navbar */
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Estilo para o footer */
 .footer {
   background-color: #FF6347;
   color: white;
   text-align: center;
   padding: 1rem;
   position: relative;
-  bottom: 0;
   width: 100%;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem; /* Garantir que o footer não sobreponha o conteúdo */
 }
 
+/* Estilo geral para o body */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
@@ -147,12 +150,13 @@ html {
   overflow-x: hidden;
 }
 
+/* Estilo para o ícone de carrinho */
 .cart-icon {
   position: relative;
 }
 
 .cart-icon i {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #ff6347;
   cursor: pointer;
 }
@@ -169,7 +173,7 @@ html {
   color: black;
   border-radius: 50%;
   padding: 0.3rem 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 </style>

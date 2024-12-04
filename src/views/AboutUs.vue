@@ -20,7 +20,8 @@
         <div class="developer-card" v-for="(member, index) in team" :key="index">
           <div class="developer-info">
             <h4 class="developer-name">{{ member.name }}</h4>
-            <p class="developer-role">{{ member.role }}</p>
+            <p class="developer-age">Idade: {{ member.age }} anos</p>
+            <p class="developer-hobby">Hobby: {{ member.hobby }}</p>
           </div>
         </div>
       </div>
@@ -34,11 +35,11 @@ export default {
   data() {
     return {
       team: [
-        { name: 'Ana Luiza', role: 'Desenvolvedora Frontend' },
-        { name: 'Edson Mainarte', role: 'Desenvolvedor Backend' },
-        { name: 'Giovana', role: 'Designer de Interface' },
-        { name: 'Leonardo', role: 'Desenvolvedor Fullstack' },
-        { name: 'Vitor Duvilierz', role: 'Especialista em Banco de Dados' },
+        { name: 'Ana Luiza', age: 18, hobby: 'Leitura' },
+        { name: 'Edson Mainarte', age: 18, hobby: 'Programação' },
+        { name: 'Giovana Kesives', age: 17, hobby: 'Passear' },
+        { name: 'Leonardo Carlos', age: 19, hobby: 'Jogar Videogame' },
+        { name: 'Vitor Anacleto', age: 18, hobby: 'Comer' },
       ]
     };
   }
@@ -46,58 +47,71 @@ export default {
 </script>
 
 <style scoped>
+/* Fonte moderna e mais tecnológica */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@500;700&display=swap');
+
 .about-us-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e0e0e0);
+  color: #333;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .page-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #222;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .description {
   font-size: 1.2rem;
-  color: #666;
-  max-width: 800px;
+  font-weight: 400;
+  color: #555;
+  max-width: 900px;
   margin: 0 auto;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
 }
 
+/* Seção de Objetivo */
 .goal-section {
-  background-color: #fff;
+  background-color: #ffffff;
   width: 100%;
   max-width: 1100px;
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 3rem;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 4rem;
 }
 
 .goal-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #333;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .goal-text {
   font-size: 1.1rem;
   color: #666;
   line-height: 1.8;
-  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
+/* Seção de Desenvolvedores */
 .developers-section {
   width: 100%;
   max-width: 1200px;
@@ -106,32 +120,35 @@ export default {
 }
 
 .developers-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 3rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .developer-cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .developer-card {
-  background-color: #fff;
-  padding: 2rem;
-  width: 220px;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .developer-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .developer-info {
@@ -139,14 +156,36 @@ export default {
 }
 
 .developer-name {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
 }
 
-.developer-role {
+.developer-age, .developer-hobby {
   font-size: 1.1rem;
-  color: #666;
+  color: #777;
+  font-weight: 500;
+  margin-top: 0.4rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .goal-section, .developer-cards {
+    padding: 2rem;
+  }
+  
+  .developer-card {
+    width: 200px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .developers-title {
+    font-size: 2rem;
+  }
 }
 </style>

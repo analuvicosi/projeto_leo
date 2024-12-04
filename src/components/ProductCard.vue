@@ -46,6 +46,8 @@ export default {
 .product-name {
   font-size: 1.2rem;
   font-weight: bold;
+  font-family: 'Playfair Display', serif; /* Fonte mais elegante */
+  text-transform: uppercase;
   margin-top: 1rem;
   text-align: center;
 }
@@ -59,7 +61,7 @@ export default {
 /* Estilo do botão de "Ver Detalhes" */
 .view-details-btn {
   padding: 0.8rem 1.5rem;
-  background-color: #2ecc71; /* Cor de fundo verde */
+  background-color:  #FF6347; /* Cor de fundo verde */
   color: white;
   border: none;
   border-radius: 5px;
